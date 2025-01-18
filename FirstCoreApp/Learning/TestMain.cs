@@ -6,12 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-
 namespace FirstCoreApp.Learning
 {
     class TryCatchTest
     {
-        public static void Main(string[] args)
+        public static void tryCatchTest()
         {
             Console.WriteLine("Please enter a number");
             string userInput = Console.ReadLine();
