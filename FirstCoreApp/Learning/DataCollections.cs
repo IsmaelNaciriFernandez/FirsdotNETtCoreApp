@@ -8,37 +8,23 @@ namespace FirstCoreApp.Learning
 {
     internal class DataCollections
     {
-        //Declare 2D array
-        private int[,] _matrix;
+        //Declare jagged array (declare an array that has arrays inside)
+        private int[][] _jaggedArray;
 
 
         public DataCollections() {
 
-            _matrix = new int[,] {
-                {1, 2, 3 },
-                {4, 5, 6 },
-                {7, 8, 9}
-            };
-
+            _jaggedArray = new int[3][];
+            _jaggedArray[0] = new int[3] { 5, 7, 8 };
+            _jaggedArray[1] = new int[9] { 5, 65, 7687, 987,321,435,4, 12, 4};
+            _jaggedArray[2] = new int[5] {12, 65, 231, 87, 03};
 
         }
 
         public void PrintData()
         {
-            //Similar to Java -> for _matrix.length { for _matrix[i].length }
-            for (int i = 0; i < _matrix.GetLength(0); i++)
-            {
-                for (int j = 0; j < _matrix.GetLength(1); j++)
-                {
-                    Console.Write($" {_matrix[i, j]} |");
-                }
-            }
 
-            //foreach (var item in _matrix)
-            //{
-            //    Console.Write(item);
-            //}
+            Console.WriteLine($"Printing middle value of 2nd position {_jaggedArray[1][4]}");
         }
-
     }
 }
