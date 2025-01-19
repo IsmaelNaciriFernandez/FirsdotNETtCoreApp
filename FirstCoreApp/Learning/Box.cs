@@ -28,15 +28,59 @@ namespace FirstCoreApp.Learning
             Console.WriteLine($"Length: {Length}, Height: {Height}, Width: {Width} \nThe volume is: {Volume}");
         }
 
+
         public void RecalculateVolume()
         {
-            _volume = Height * Width * Length;
+            _volume = Width * Height * Length;
         }
 
 
-        public float Length { get => _length; set => _length = value; }
-        public float Height { get => _height; set => _height = value; }
-        public float Width { get => _width; set => _width = value; }
-        public float Volume { get => _volume; set => _volume = value; }
+        public float Length
+        {
+            get => _length;
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Length should be higher than 0");
+                } else
+                {
+                    _length = value;
+                }
+                
+            }
+        }
+
+        public float Height
+        {
+            get => _height; 
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Height should be higher than 0");
+                } else
+                {
+                    _height = value;
+                }
+            }
+        }
+
+        public float Width
+        {
+            get => _width; 
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Width should be higher than 0");
+                } else
+                {
+                    _width = value;
+                }
+            }
+        }
+
+        public float Volume { get => _volume; }
     }
 }
