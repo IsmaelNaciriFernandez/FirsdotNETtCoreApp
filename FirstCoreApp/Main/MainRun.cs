@@ -30,8 +30,13 @@ namespace FirstCoreApp.MainRun
             //m1.Introduce(true);
             //Console.ReadKey();
 
-            DataCollections test = new DataCollections();
-            test.PrintData();
+            //DataCollections test = new DataCollections();
+            //test.PrintData();
+
+            var friends = new List<string> { "Isma", "Mariona", "Anna", "Marc", "Aram", "Pau", "Nerea" };
+            var partyFriends = Debugging_test.GetPartyFriends(friends, 3);
+
+            foreach (var name in partyFriends) Console.WriteLine(name);
 
 
         }
